@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/rickygzz/ToDelete/issues"
   },
-  "homepage": "https://github.com/rickygzz/ToDelete#readme"
+  "homepage": "https://github.com/rickygzz/ToDelete#readme",
+  "dependencies": {
+    "concurrently": "^7.1.0"
+  }
 }
