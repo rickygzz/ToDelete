@@ -22,7 +22,7 @@ model Report {
 }
 
 model Donation {
-  int Int @id @default(autoincrement())
+  id Int @id @default(autoincrement())
   donatorName String
   city String
   state String
@@ -34,7 +34,7 @@ model Donation {
 }
 
 model User {
-  int Int @id @default(autoincrement())
+  id Int @id @default(autoincrement())
   name String
   lastname String
   role String

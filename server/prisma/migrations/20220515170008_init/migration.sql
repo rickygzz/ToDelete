@@ -14,7 +14,7 @@ CREATE TABLE `Report` (
 
 -- CreateTable
 CREATE TABLE `Donation` (
-    `int` INTEGER NOT NULL AUTO_INCREMENT,
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
     `donatorName` VARCHAR(191) NOT NULL,
     `city` VARCHAR(191) NOT NULL,
     `state` VARCHAR(191) NOT NULL,
@@ -24,17 +24,17 @@ CREATE TABLE `Donation` (
     `dateCreated` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `lastUpdated` DATETIME(3) NOT NULL,
 
-    PRIMARY KEY (`int`)
+    PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
 CREATE TABLE `User` (
-    `int` INTEGER NOT NULL AUTO_INCREMENT,
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(191) NOT NULL,
     `lastname` VARCHAR(191) NOT NULL,
     `role` VARCHAR(191) NOT NULL,
     `email` VARCHAR(191) NOT NULL,
     `pass` VARCHAR(191) NOT NULL,
 
-    PRIMARY KEY (`int`)
+    PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
