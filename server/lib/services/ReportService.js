@@ -36,7 +36,7 @@ class ReportService
 
         await prisma.report.update({
             where: { id: theID },
-            data: { reportData }
+            data: reportData
         });
 
         return { message: "OK" };

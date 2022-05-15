@@ -36,7 +36,7 @@ class DonationService
 
         await prisma.donation.update({
             where: { id: theID },
-            data: { donationData }
+            data: donationData
         });
 
         return { message: "OK" };

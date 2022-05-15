@@ -46,7 +46,7 @@ app.post("/reports", async (req, res) => {
         status: req.body.status
     };
 
-    const response = await ReportController(reportData);
+    const response = await ReportController.createReport(reportData);
 
     res.json(response);
 });
@@ -60,7 +60,7 @@ app.put("/reports/:id", async (req,res) => {
         status: req.body.status
     };
 
-    const response = await ReportController(req.params.id, report);
+    const response = await ReportController.updateReport(req.params.id, report);
 
     return res.json(response);
 });
