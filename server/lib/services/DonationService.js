@@ -24,9 +24,14 @@ class DonationService
         // TODO Add ErrorHandling
         //      Check required fields in donationData
 
-        await prisma.donation.create({data: donationData});
+        const donation = await prisma.donation.create({
+            data: donationData,
+            select: {
+                id: true
+            }
+        });
 
-        return { message: "OK" };
+        return { message: "OK", id: donation.id };
     }
 
     static async updateDonation(id, donationData)
@@ -39,7 +44,7 @@ class DonationService
             data: donationData
         });
 
-        return { message: "OK" };
+        return { message: "OK", id: theID };
     }
 
     static async deleteDonation(id)
@@ -49,7 +54,7 @@ class DonationService
 
         await prisma.donation.delete({ where: { id: theID }});
 
-        return { message: "OK" };
+        return { message: "OK", id: theID };
     }
 }
 

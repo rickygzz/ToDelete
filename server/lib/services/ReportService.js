@@ -24,9 +24,14 @@ class ReportService
         // TODO Add ErrorHandling
         //      Check required fields in reportData
 
-        await prisma.report.create({data: reportData});
+        const report = await prisma.report.create({
+            data: reportData,
+            select: {
+                id: true
+            }
+        });
 
-        return { message: "OK" };
+        return { message: "OK", id: report.id };
     }
 
     static async updateReport(id, reportData)
@@ -39,7 +44,7 @@ class ReportService
             data: reportData
         });
 
-        return { message: "OK" };
+        return { message: "OK", id: theID };
     }
 
     static async deleteReport(id)
@@ -49,7 +54,7 @@ class ReportService
 
         await prisma.report.delete({ where: { id: theID }});
 
-        return { message: "OK" };
+        return { message: "OK", id: theID };
     }
 }
 
