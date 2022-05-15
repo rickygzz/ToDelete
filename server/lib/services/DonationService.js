@@ -1,4 +1,4 @@
-const { PrismaClient } = require('@prisma/client');
+const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
 class DonationService
@@ -14,7 +14,7 @@ class DonationService
     {
         const theID = parseInt(id);
 
-        const donation = await prisma.donation.findUnique({where: {id: parseInt(id)}});
+        const donation = await prisma.donation.findUnique({where: {id: theID }});
 
         return donation;
     }
@@ -26,7 +26,7 @@ class DonationService
 
         await prisma.donation.create({data: donationData});
 
-        return { message: 'OK' };
+        return { message: "OK" };
     }
 
     static async updateDonation(id, donationData)
@@ -39,17 +39,17 @@ class DonationService
             data: { donationData }
         });
 
-        return { message: 'OK' };
+        return { message: "OK" };
     }
 
-    static async deleteDonation(id, donationData)
+    static async deleteDonation(id)
     {
         // TODO Add Error Handling
         const theID = parseInt(id);
 
         await prisma.donation.delete({ where: { id: theID }});
 
-        return { message: 'OK' };
+        return { message: "OK" };
     }
 }
 
